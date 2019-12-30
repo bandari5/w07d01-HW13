@@ -12,6 +12,28 @@ var swapCase = function(string) {
   // Codeeeee
 };
 ​
+// Solution PART 1/A
+
+const swapCase = swapString =>
+ {
+   let stringArr = swapString.split(' ')
+   let arr = stringArr.map((word,index) => 
+   {
+  if (index % 2 === 0)
+     {
+    return word.toUpperCase()
+     }
+     else
+     {
+    return word
+     }
+
+    })
+    return arr.join()
+
+  }
+ swapCase('hello stranger , what do we have today? ')
+
 // B) Write a function shiftLetters that takes a string and uses .map to return an encoded string with each letter shifted down the
 // alphabet by one. Hint: Use Look up the JS functions String.fromCharCode() and String.charCodeAt() .
 // see if you can use Ascii code to acomplish this
@@ -21,7 +43,13 @@ var shiftLetters = function(string) {
   // code!
 };
 
+// solution PART 1/B:
+var word = "hello";
+ let shiftLetters = word.split("").map((val, index) => {
+   return String.fromCharCode(word.charCodeAt(index) + 1);
+ }).join('');
 
+  console.log(shiftLetters);
 
 
 // PART 2: USE FOREACH IN THE FOLLOWING EXCERCISES
@@ -48,6 +76,21 @@ var shiftLetters = function(string) {
 // - 3 of diamonds 
 
 
+// solution PART 2/A
+
+var cardsdeck = [];
+ var cards = ["ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king"];
+ var suits = ["clubs","diamonds", "hearts", "spades"];
+
+suits.forEach(function(suit) {
+  cards.forEach(function(card) {
+    cardsdeck.push([card + " of " + suit]);
+  });
+});
+
+console.log(cardsdeck)
+
+
 // B) Word Play
 // Create a form where users may enter a sentence.
 // Turn that sentence into an array using the split method.
@@ -55,5 +98,19 @@ var shiftLetters = function(string) {
 // Finally, reverse the order of the new array, join it back together into a string, and display it to the user.
 
 
+// solution PART 2/B
 
+newArr=[];
+ var WordPlay = (string) => {
+   newS=string.split(" ")
+   newS.forEach(function(element){
+     if(element.length>=3){
+       newArr.push(element)
+       reverseNewArr=newArr.reverse();
+     }
+ })
+ console.log(newArr)
+ console.log(reverseNewArr.join())
+ };
+  WordPlay("hi , goodMorning")
 
